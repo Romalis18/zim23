@@ -1,0 +1,207 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+}
+nav{
+    height: 56px;
+}
+ul{
+    display: flex;
+    width: 100%;
+    height: 56px;
+    flex-wrap: wrap;
+}
+li{
+    flex: 1;
+    list-style: none;
+    text-align: center;
+    margin: auto;
+    background-color: aquamarine;
+    border: 3px solid rgb(243, 97, 97);
+    border-left: 0px;
+    font-size: 20px;
+    line-height: 50px;
+    border-radius: 5px;
+}
+li img{
+    display: block;
+    line-height: 50px;
+    margin: auto; 
+    height: 50px;
+}
+.logo{
+    border-left: 3px solid rgb(243, 97, 97);  
+}
+nav li:hover{
+    color: blue;
+    cursor: pointer;
+}
+.hamburger_menu{
+    display: none;
+    width: 56px;
+    height: 56px;
+}
+.hamburger_menu img{
+    width: 100%;
+}
+.conteiner{
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 3px;
+    grid-template-areas: 
+    "A A B C D"
+    "A A B C F"
+    "A A E E E"
+    "A A E E E";
+    padding: 3px;
+}
+.box-a{
+    grid-area: A;
+    background-image: url(./img/Baykal.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 5px;
+}
+.box-b{
+    grid-area: B;
+    background-color: rgb(10, 126, 44);
+    border-radius: 5px;
+}
+.box-b img{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.box-c img{
+   display: block;
+   margin: auto;
+   height: auto;
+}
+.box-c{
+    display: flex;
+    grid-area: C;
+    background: linear-gradient(135deg, blue, white, red);
+    border-radius: 5px;
+}
+.box-d{
+    grid-area: D;
+    background-image: url(./img/plywood.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+.box-e{
+    grid-area: E;
+    background: linear-gradient(45deg, white 15%, blue 40%, yellow);
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.box-f{
+    grid-area: F;
+    background-color: rgb(126, 10, 35);
+    border-radius: 5px;
+}
+.conteiner p{
+    padding: 20px;
+    font-size:18px;
+}
+footer{
+    width: calc(100% - 6px);
+    height: 50px;
+    line-height: 50px;
+    background-color: rgb(133, 45, 45);
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    border-radius: 5px;
+    margin-left: 3px;
+    margin-bottom: 3px;
+}
+.left{
+    width: 50%;
+    height: 50px;
+}
+.right{
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center
+}
+.right img{
+    height: 30px;
+    padding-left: 5px;  
+}
+@media (max-width: 768px){
+.conteiner{
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    "A A A"
+    "A A A"
+    "A A A"
+    "A A A"
+    "B C D"
+    "B C F"
+    "E E E"
+    "E E E";
+}
+footer{
+    flex-direction: column;
+    height: auto;
+}
+.right, .left{
+    width: auto;
+    padding: 0px;
+    margin: 0px auto;
+}
+}
+@media (max-width: 400px){
+    .conteiner{
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+        "A A A"
+        "A A A"
+        "A A A"
+        "B C D"
+        "B C F"
+        "E E E"
+        "E E E";
+    }  
+    ul{
+        display: none;
+    }
+    .hamburger_menu{
+        display: block;
+        width: calc(100% - 6px);
+        margin: 3px 3px 0px 3px;
+        background-color: aquamarine;
+        border-radius: 5px;
+    }
+    .hamburger_menu img{
+        width: 56px;
+    }
+    .hamburger_menu:hover~ul{
+        display: block;
+        position: relative;
+    }
+    li, .logo{
+        padding: 0px;
+        width: 100%;
+        border-left: 3px solid rgb(243, 97, 97);
+        border-top: 0px;
+    }
+    .logo{
+        border-top: 3px solid rgb(243, 97, 97);
+    }
+}
